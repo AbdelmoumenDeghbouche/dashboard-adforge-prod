@@ -4,11 +4,11 @@ import type { FilterChip } from '@/types';
 
 const initialFilters: FilterChip[] = [
   { id: '1', label: 'Suggested', icon: '/icons/suggested.svg', active: true },
-  { id: '2', label: 'Acquisition', icon: '/icons/acquisition.svg', active: false },
-  { id: '3', label: 'Social networks', icon: '/icons/social.svg', active: false },
+  { id: '2', label: 'Acquisition', icon: '/icons/Acquisition.svg', active: false },
+  { id: '3', label: 'Social networks', icon: '/icons/Social networks.svg', active: false },
   { id: '4', label: 'Marketing', icon: '/icons/marketing.svg', active: false },
-  { id: '5', label: 'Emailing', icon: '/icons/email.svg', active: false },
-  { id: '6', label: 'Advertising', icon: '/icons/advertising.svg', active: false },
+  { id: '5', label: 'Emailing', icon: '/icons/emailing.svg', active: false },
+  { id: '6', label: 'Advertising', icon: '/icons/Advertising.svg', active: false },
 ];
 
 const FilterChips: React.FC = () => {
