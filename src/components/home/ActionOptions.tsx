@@ -9,7 +9,7 @@ interface ActionOption {
 const actionOptions: ActionOption[] = [
   { id: 'chatmode', label: 'Chatmode', icon: '/icons/chatmode.svg' },
   { id: 'ai-avatars', label: 'AI Avatars', icon: '/icons/AI Avatars.svg' },
-  { id: 'recreate-ad', label: 'Recreate an Ad', icon: '/icons/Recreate an Ad.svg' },
+  { id: 'recreate-ad', label: 'Recreate an Ad', icon: '/icons/recreate.svg' },
 ];
 
 interface ActionOptionsProps {

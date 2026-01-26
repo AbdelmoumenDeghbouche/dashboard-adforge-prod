@@ -54,8 +54,9 @@ const AiAvatarsPage: React.FC = () => {
         borderRadius: 'min(16px, 1.11vw)',
         borderWidth: '1px',
         opacity: 1,
+        height: 'min(964px, 94vh)',
       }}
-      className="flex flex-col md:flex-row w-full h-screen md:h-auto md:max-h-[94vh] bg-bg-primary border border-border-light overflow-hidden mx-auto"
+      className="flex flex-col md:flex-row w-full bg-bg-primary border border-border-light overflow-hidden mx-auto"
     >
       <FilterPanel filters={filters} onFilterChange={setFilters} />
       <AvatarsGrid avatars={filteredAvatars} />

@@ -30,14 +30,14 @@ const AvatarsGrid: React.FC<AvatarsGridProps> = ({ avatars }) => {
           padding: 'min(44px, 3.06vw)',
           opacity: 1,
         }}
-        className="flex-1 overflow-y-auto w-full md:w-[min(799px,55.5vw)] md:max-w-[799px] md:h-auto"
+        className="flex-1 min-h-0 overflow-y-auto w-full md:w-[min(799px,55.5vw)] md:max-w-[799px]"
       >
         <div 
           style={{
             gap: 'min(20px, 1.39vw)',
             opacity: 1,
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full md:w-[min(711px,49.4vw)] md:h-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full md:w-[min(711px,49.4vw)]"
         >
           <CreateAvatarCard />
           {displayedAvatars.map((avatar) => (
