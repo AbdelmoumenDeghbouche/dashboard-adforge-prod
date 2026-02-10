@@ -40,7 +40,7 @@ const mockAngles: MarketingAngle[] = [
     title: 'Science-Backed Relief',
     description: 'Clinically proven probiotics for targeted wellness support',
     score: '9.2',
-    metrics: { engagement: '8.5', conversion: '7.8', retention: '9.0' },
+    metrics: { emotion: '8.5', proof: '9.0', differentiation: '7.8' },
     reason: 'Appeals to evidence-seeking audience with credibility-focused messaging'
   },
   {
@@ -48,7 +48,7 @@ const mockAngles: MarketingAngle[] = [
     title: 'Natural Daily Routine',
     description: 'Simple integration into your existing wellness habits',
     score: '8.7',
-    metrics: { engagement: '9.1', conversion: '7.5', retention: '8.9' },
+    metrics: { emotion: '9.1', proof: '7.5', differentiation: '8.9' },
     reason: 'Reduces friction by positioning product as an easy lifestyle addition'
   }
 ];
@@ -60,9 +60,6 @@ const mockConcepts: PsychologyConcept[] = [
     score: '9.4',
     description: 'Leveraging testimonials and user success stories',
     hook: 'Join thousands who transformed their health',
-    badge: 'SCRIPT PREVIEW',
-    scriptPreview: 'See how real users achieved results in just 30 days...',
-    explanation: 'People trust what others recommend, especially for health products',
     metrics: {
       hook: '9.2',
       mechanism: '8.8',
@@ -76,9 +73,6 @@ const mockConcepts: PsychologyConcept[] = [
     score: '8.7',
     description: 'Creating FOMO with time-sensitive offers',
     hook: 'Limited time: 30% off your first order',
-    badge: 'HOOK',
-    scriptPreview: 'Don\'t miss out - this exclusive offer ends in 48 hours...',
-    explanation: 'Encourages immediate action through scarcity messaging',
     metrics: {
       hook: '9.1',
       mechanism: '8.5',
@@ -119,17 +113,17 @@ const brand1Products: Product[] = [
 const brand1Chats: ChatMessage[] = [
   {
     id: 'chat1-1',
-    type: 'user',
+    type: 'text',
     sender: 'user',
     content: 'Create a video ad campaign for our new probiotic targeting women over 40',
-    timestamp: new Date('2024-02-05T10:30:00').toISOString()
+    timestamp: new Date('2024-02-05T10:30:00')
   },
   {
     id: 'chat1-2',
-    type: 'ai',
+    type: 'text',
     sender: 'ai',
     content: 'I\'ll help you create a compelling video ad. Let me analyze your target audience and suggest the best approach.',
-    timestamp: new Date('2024-02-05T10:30:15').toISOString()
+    timestamp: new Date('2024-02-05T10:30:15')
   },
   {
     id: 'chat1-3',
@@ -137,14 +131,14 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Based on your product and goals, here are the top persona segments:',
     data: { audiences: mockAudiences },
-    timestamp: new Date('2024-02-05T10:30:30').toISOString()
+    timestamp: new Date('2024-02-05T10:30:30')
   },
   {
     id: 'chat1-4',
-    type: 'user_selection',
+    type: 'text',
     sender: 'user',
     content: 'Women Perimenopause',
-    timestamp: new Date('2024-02-05T10:31:00').toISOString()
+    timestamp: new Date('2024-02-05T10:31:00')
   },
   {
     id: 'chat1-5',
@@ -152,14 +146,14 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Perfect choice! Now select a marketing angle:',
     data: { angles: mockAngles },
-    timestamp: new Date('2024-02-05T10:31:15').toISOString()
+    timestamp: new Date('2024-02-05T10:31:15')
   },
   {
     id: 'chat1-6',
-    type: 'user_selection',
+    type: 'text',
     sender: 'user',
     content: 'Science-Backed Relief',
-    timestamp: new Date('2024-02-05T10:32:00').toISOString()
+    timestamp: new Date('2024-02-05T10:32:00')
   },
   {
     id: 'chat1-7',
@@ -167,7 +161,7 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Choose a psychological principle to enhance your message:',
     data: { concepts: mockConcepts },
-    timestamp: new Date('2024-02-05T10:32:15').toISOString()
+    timestamp: new Date('2024-02-05T10:32:15')
   }
 ];
 
@@ -202,17 +196,17 @@ const brand2Products: Product[] = [
 const brand2Chats: ChatMessage[] = [
   {
     id: 'chat2-1',
-    type: 'user',
+    type: 'text',
     sender: 'user',
     content: 'I need a TikTok ad for the new Insta360 camera targeting adventure creators',
-    timestamp: new Date('2024-02-06T14:20:00').toISOString()
+    timestamp: new Date('2024-02-06T14:20:00')
   },
   {
     id: 'chat2-2',
-    type: 'ai',
+    type: 'text',
     sender: 'ai',
     content: 'Great! Let\'s create an engaging TikTok ad. First, let me identify your ideal audience.',
-    timestamp: new Date('2024-02-06T14:20:10').toISOString()
+    timestamp: new Date('2024-02-06T14:20:10')
   },
   {
     id: 'chat2-3',
@@ -251,21 +245,21 @@ const brand2Chats: ChatMessage[] = [
         }
       ]
     },
-    timestamp: new Date('2024-02-06T14:20:25').toISOString()
+    timestamp: new Date('2024-02-06T14:20:25')
   },
   {
     id: 'chat2-4',
-    type: 'user',
+    type: 'text',
     sender: 'user',
     content: 'Generate image ads showing the camera in action sports scenarios',
-    timestamp: new Date('2024-02-07T09:15:00').toISOString()
+    timestamp: new Date('2024-02-07T09:15:00')
   },
   {
     id: 'chat2-5',
-    type: 'ai',
+    type: 'text',
     sender: 'ai',
     content: 'I\'ll create dynamic action sports imagery for your campaign.',
-    timestamp: new Date('2024-02-07T09:15:10').toISOString()
+    timestamp: new Date('2024-02-07T09:15:10')
   }
 ];
 

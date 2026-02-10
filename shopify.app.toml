@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "5796e7f9cdc5fb9174f898e3849971b3"
+name = "Adforge"
+application_url = "https://typccmfncq.eu-west-3.awsapprunner.com/"
+embedded = true
+
+[webhooks]
+api_version = "2025-10"
+
+  [[webhooks.subscriptions]]
+  uri = "https://gsynm5jezt.eu-west-3.awsapprunner.com/api/v1/shopify/webhooks/compliance"
+  compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "https://gsynm5jezt.eu-west-3.awsapprunner.com/api/v1/shopify/webhook"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_analytics,write_inventory,read_inventory,read_orders,read_products,write_products"
+optional_scopes = [ ]
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [
+  "https://generous-bioecologically-remedios.ngrok-free.dev/api/v1/shopify/callback",
+  "https://gsynm5jezt.eu-west-3.awsapprunner.com/api/v1/shopify/callback"
+]
+
+[pos]
+embedded = false
