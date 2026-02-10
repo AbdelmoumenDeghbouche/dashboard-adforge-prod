@@ -30,7 +30,7 @@ const WelcomeSection: React.FC = () => {
 
       {/* Main Heading - Using text for perfect emoji rendering and scaling */}
       <h1 className="font-bold text-[24px] sm:text-[28px] lg:text-[32px] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#0A0A0A] text-center px-4 sm:px-0">
-        Let&apos;s create AI creatives, Théo 👋
+        Let&apos;s create AI creatives, Wassim 👋
       </h1>
     </div>
   );
