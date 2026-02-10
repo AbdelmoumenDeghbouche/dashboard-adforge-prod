@@ -119,17 +119,17 @@ const brand1Products: Product[] = [
 const brand1Chats: ChatMessage[] = [
   {
     id: 'chat1-1',
-    type: 'text',
+    type: 'user',
     sender: 'user',
     content: 'Create a video ad campaign for our new probiotic targeting women over 40',
-    timestamp: new Date('2024-02-05T10:30:00')
+    timestamp: new Date('2024-02-05T10:30:00').toISOString()
   },
   {
     id: 'chat1-2',
-    type: 'text',
+    type: 'ai',
     sender: 'ai',
     content: 'I\'ll help you create a compelling video ad. Let me analyze your target audience and suggest the best approach.',
-    timestamp: new Date('2024-02-05T10:30:15')
+    timestamp: new Date('2024-02-05T10:30:15').toISOString()
   },
   {
     id: 'chat1-3',
@@ -137,14 +137,14 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Based on your product and goals, here are the top persona segments:',
     data: { audiences: mockAudiences },
-    timestamp: new Date('2024-02-05T10:30:30')
+    timestamp: new Date('2024-02-05T10:30:30').toISOString()
   },
   {
     id: 'chat1-4',
-    type: 'text',
+    type: 'user_selection',
     sender: 'user',
     content: 'Women Perimenopause',
-    timestamp: new Date('2024-02-05T10:31:00')
+    timestamp: new Date('2024-02-05T10:31:00').toISOString()
   },
   {
     id: 'chat1-5',
@@ -152,14 +152,14 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Perfect choice! Now select a marketing angle:',
     data: { angles: mockAngles },
-    timestamp: new Date('2024-02-05T10:31:15')
+    timestamp: new Date('2024-02-05T10:31:15').toISOString()
   },
   {
     id: 'chat1-6',
-    type: 'text',
+    type: 'user_selection',
     sender: 'user',
     content: 'Science-Backed Relief',
-    timestamp: new Date('2024-02-05T10:32:00')
+    timestamp: new Date('2024-02-05T10:32:00').toISOString()
   },
   {
     id: 'chat1-7',
@@ -167,7 +167,7 @@ const brand1Chats: ChatMessage[] = [
     sender: 'ai',
     content: 'Choose a psychological principle to enhance your message:',
     data: { concepts: mockConcepts },
-    timestamp: new Date('2024-02-05T10:32:15')
+    timestamp: new Date('2024-02-05T10:32:15').toISOString()
   }
 ];
 
@@ -202,17 +202,17 @@ const brand2Products: Product[] = [
 const brand2Chats: ChatMessage[] = [
   {
     id: 'chat2-1',
-    type: 'text',
+    type: 'user',
     sender: 'user',
     content: 'I need a TikTok ad for the new Insta360 camera targeting adventure creators',
-    timestamp: new Date('2024-02-06T14:20:00')
+    timestamp: new Date('2024-02-06T14:20:00').toISOString()
   },
   {
     id: 'chat2-2',
-    type: 'text',
+    type: 'ai',
     sender: 'ai',
     content: 'Great! Let\'s create an engaging TikTok ad. First, let me identify your ideal audience.',
-    timestamp: new Date('2024-02-06T14:20:10')
+    timestamp: new Date('2024-02-06T14:20:10').toISOString()
   },
   {
     id: 'chat2-3',
@@ -251,21 +251,21 @@ const brand2Chats: ChatMessage[] = [
         }
       ]
     },
-    timestamp: new Date('2024-02-06T14:20:25')
+    timestamp: new Date('2024-02-06T14:20:25').toISOString()
   },
   {
     id: 'chat2-4',
-    type: 'text',
+    type: 'user',
     sender: 'user',
     content: 'Generate image ads showing the camera in action sports scenarios',
-    timestamp: new Date('2024-02-07T09:15:00')
+    timestamp: new Date('2024-02-07T09:15:00').toISOString()
   },
   {
     id: 'chat2-5',
-    type: 'text',
+    type: 'ai',
     sender: 'ai',
     content: 'I\'ll create dynamic action sports imagery for your campaign.',
-    timestamp: new Date('2024-02-07T09:15:10')
+    timestamp: new Date('2024-02-07T09:15:10').toISOString()
   }
 ];
 
