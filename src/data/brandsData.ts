@@ -40,7 +40,7 @@ const mockAngles: MarketingAngle[] = [
     title: 'Science-Backed Relief',
     description: 'Clinically proven probiotics for targeted wellness support',
     score: '9.2',
-    metrics: { engagement: '8.5', conversion: '7.8', retention: '9.0' },
+    metrics: { emotion: '8.5', proof: '7.8', differentiation: '9.0' },
     reason: 'Appeals to evidence-seeking audience with credibility-focused messaging'
   },
   {
@@ -48,7 +48,7 @@ const mockAngles: MarketingAngle[] = [
     title: 'Natural Daily Routine',
     description: 'Simple integration into your existing wellness habits',
     score: '8.7',
-    metrics: { engagement: '9.1', conversion: '7.5', retention: '8.9' },
+    metrics: { emotion: '9.1', proof: '7.5', differentiation: '8.9' },
     reason: 'Reduces friction by positioning product as an easy lifestyle addition'
   }
 ];
@@ -60,9 +60,6 @@ const mockConcepts: PsychologyConcept[] = [
     score: '9.4',
     description: 'Leveraging testimonials and user success stories',
     hook: 'Join thousands who transformed their health',
-    badge: 'SCRIPT PREVIEW',
-    scriptPreview: 'See how real users achieved results in just 30 days...',
-    explanation: 'People trust what others recommend, especially for health products',
     metrics: {
       hook: '9.2',
       mechanism: '8.8',
@@ -76,9 +73,6 @@ const mockConcepts: PsychologyConcept[] = [
     score: '8.7',
     description: 'Creating FOMO with time-sensitive offers',
     hook: 'Limited time: 30% off your first order',
-    badge: 'HOOK',
-    scriptPreview: 'Don\'t miss out - this exclusive offer ends in 48 hours...',
-    explanation: 'Encourages immediate action through scarcity messaging',
     metrics: {
       hook: '9.1',
       mechanism: '8.5',
