@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import './App.css';
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthProvider';
 import { BrandProvider } from './contexts/BrandContext';
 import { JobNotificationProvider } from './contexts/JobNotificationContext';
 import { TasksProvider } from './contexts/TasksContext';
