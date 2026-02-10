@@ -8,16 +8,13 @@ export type ChatMessageType =
   | 'psychology_selection'
   | 'video_result'
   | 'selection_summary'
-  | 'static_ad_result'
-  | 'user_selection'
-  | 'user'
-  | 'ai';
+  | 'static_ad_result';
 
 export interface ChatMessage {
   id: string;
   type: ChatMessageType;
   sender: 'ai' | 'user';
-  timestamp: Date | string;
+  timestamp: Date;
   content?: string;
   data?: {
     audiences?: Audience[];
@@ -59,12 +56,9 @@ export interface MarketingAngle {
   description: string;
   score: string;
   metrics: {
-    emotion?: string;
-    proof?: string;
-    differentiation?: string;
-    engagement?: string;
-    conversion?: string;
-    retention?: string;
+    emotion: string;
+    proof: string;
+    differentiation: string;
   };
   reason: string;
   tags?: string[];
@@ -77,9 +71,6 @@ export interface PsychologyConcept {
   score: string;
   description: string;
   hook: string;
-  badge?: string;
-  scriptPreview?: string;
-  explanation?: string;
   metrics: {
     hook: string;
     mechanism: string;

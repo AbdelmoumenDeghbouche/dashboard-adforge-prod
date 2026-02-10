@@ -65,6 +65,7 @@ const ChatsSection: React.FC<ChatsSectionProps> = ({ searchQuery = '', onChatCli
 
       {/* Chats List - Frame 11 */}
       <div className="flex flex-col items-start p-0 gap-0.5 w-full max-h-[400px] overflow-y-auto">
+        {console.log('💬 ChatsSection - Rendering', filteredChats.length, 'chat items')}
         {filteredChats.map((chat) => {
           console.log('💬 ChatsSection - Rendering chat:', chat.id, chat.title);
           const isNewChat = chat.id === 'new-chat';

@@ -12,8 +12,7 @@ import {
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { authAPI } from '../services/apiService';
-import { AuthContext } from './AuthContext';
-import type { AuthContextType } from './AuthContext';
+import { AuthContext, AuthContextType } from './AuthContext';
 
 interface AuthProviderProps {
   children: ReactNode;
