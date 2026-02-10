@@ -1,20 +1,35 @@
 import React from 'react';
 import { cn } from '@/utils/cn';
-import type { NavItem as NavItemType } from '@/types';
 
-const NavItem: React.FC<NavItemType> = ({ label, icon, active, onClick }) => {
+interface NavItemProps {
+  label: string;
+  icon: string;
+  active?: boolean;
+  onClick?: () => void;
+}
+
+const NavItem: React.FC<NavItemProps> = ({ label, icon, active, onClick }) => {
   return (
     <button
       onClick={onClick}
       className={cn(
-        'flex items-center gap-3 w-full px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200',
-        active
-          ? 'bg-gray-200 text-text-primary'
-          : 'text-text-secondary hover:bg-bg-hover hover:translate-x-0.5'
+        "flex flex-row items-center p-2 gap-2 w-full h-[38px] rounded-[14px] transition-all duration-200",
+        active 
+          ? "bg-[#0A0A0A]/[0.04] opacity-100" 
+          : "opacity-70 hover:bg-[#0A0A0A]/[0.02]"
       )}
     >
-      <img src={icon} alt="" className="w-5 h-5" />
-      <span>{label}</span>
+      {/* Icon Frame - 24x24px */}
+      <div className="w-6 h-6 flex items-center justify-center shrink-0">
+        <div className="w-[18px] h-[18px] flex items-center justify-center">
+          <img src={icon} alt="" className="w-full h-full object-contain" />
+        </div>
+      </div>
+
+      {/* Label */}
+      <span className="font-medium text-[12px] sm:text-[13px] lg:text-[14px] leading-[18px] sm:leading-[20px] lg:leading-[22px] tracking-[-0.007em] text-[#0A0A0A]">
+        {label}
+      </span>
     </button>
   );
 };

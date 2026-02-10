@@ -3,28 +3,24 @@ import { Avatar } from '@/types/avatars';
 
 interface AvatarCardProps {
   avatar: Avatar;
+  onSelect?: (avatar: Avatar) => void;
 }
 
-const AvatarCard: React.FC<AvatarCardProps> = ({ avatar }) => {
+const AvatarCard: React.FC<AvatarCardProps> = ({ avatar, onSelect }) => {
   return (
-    <div className="group cursor-pointer w-full">
-      <div 
-        style={{
-          maxWidth: 'min(162.75px, 11.3vw)',
-          aspectRatio: '162.75 / 324.86',
-          gap: 'min(12px, 0.83vw)',
-          opacity: 1,
-        }}
-        className="relative w-full mx-auto rounded-xl overflow-hidden bg-gray-100 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
-      >
+    <div 
+      onClick={() => onSelect?.(avatar)}
+      className="group cursor-pointer flex flex-col gap-3 w-full"
+    >
+      <div className="w-full aspect-[162.75/290.86] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A0A0A]/[0.04] transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg">
         <img
           src={avatar.image}
           alt={avatar.name}
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="mt-2">
-        <h3 className="text-sm font-medium text-text-primary">{avatar.name}</h3>
+      <div className="px-1.5 sm:px-2 md:px-2.5">
+        <h3 className="font-medium text-[11px] sm:text-xs md:text-sm leading-[16px] sm:leading-[18px] md:leading-[22px] tracking-[-0.007em] text-[#0A0A0A]">{avatar.name}</h3>
       </div>
     </div>
   );

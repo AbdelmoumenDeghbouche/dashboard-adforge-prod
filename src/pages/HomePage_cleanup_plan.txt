@@ -1,0 +1,9 @@
+HomePage.tsx Status Review:
+- Lines 149-178: Mixed handleSendMessage logic with duplicate blocks and a trailing 'else {'.
+- Lines 286-287: simulateGeneration ends, but simulateVideoResult is missing below it.
+- Lines 632: VideoResultCard thumbnail uses msg.data?.avatarImage (now supported by type update).
+- Lines 671-683: MessageInputBox props are correctly updated.
+
+Cleanup Plan:
+1. Replace lines 149-178 with a clean handleSendMessage.
+2. Insert simulateVideoResult after simulateGeneration.

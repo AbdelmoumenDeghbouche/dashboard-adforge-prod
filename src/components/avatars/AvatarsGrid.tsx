@@ -6,9 +6,10 @@ import TabSwitch from './TabSwitch';
 
 interface AvatarsGridProps {
   avatars: Avatar[];
+  onAvatarSelect?: (avatar: Avatar) => void;
 }
 
-const AvatarsGrid: React.FC<AvatarsGridProps> = ({ avatars }) => {
+const AvatarsGrid: React.FC<AvatarsGridProps> = ({ avatars, onAvatarSelect }) => {
   const [activeTab, setActiveTab] = useState<TabType>('marketplace');
 
   // Filter avatars based on active tab
@@ -17,33 +18,22 @@ const AvatarsGrid: React.FC<AvatarsGridProps> = ({ avatars }) => {
     : avatars.filter(avatar => avatar.isOwned);
 
   return (
-    <div className="flex-1 flex flex-col h-full">
+    <div className="flex-1 h-full flex flex-col bg-white overflow-y-auto pt-4 sm:pt-6 lg:pt-[44px] px-3 sm:px-4 lg:px-[44px] pb-8 sm:pb-10 gap-5 sm:gap-[32px] w-full">
       {/* Tabs Switcher */}
-      <div className="border-b border-border-light px-6 py-4">
+      <div className="w-fit">
         <TabSwitch activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
 
-      {/* Grid */}
-      <div 
-        style={{
-          gap: 'min(32px, 2.22vw)',
-          padding: 'min(44px, 3.06vw)',
-          opacity: 1,
-        }}
-        className="flex-1 min-h-0 overflow-y-auto w-full md:w-[min(799px,55.5vw)] md:max-w-[799px]"
-      >
-        <div 
-          style={{
-            gap: 'min(20px, 1.39vw)',
-            opacity: 1,
-          }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full md:w-[min(711px,49.4vw)]"
-        >
-          <CreateAvatarCard />
-          {displayedAvatars.map((avatar) => (
-            <AvatarCard key={avatar.id} avatar={avatar} />
-          ))}
-        </div>
+      {/* Grid - Responsive columns */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-[20px] w-full">
+        <CreateAvatarCard />
+        {displayedAvatars.map((avatar) => (
+          <AvatarCard 
+            key={avatar.id} 
+            avatar={avatar} 
+            onSelect={onAvatarSelect}
+          />
+        ))}
       </div>
     </div>
   );

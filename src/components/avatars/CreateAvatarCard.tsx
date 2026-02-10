@@ -6,26 +6,20 @@ const CreateAvatarCard: React.FC = () => {
 
   return (
     <>
-      <div className="group cursor-pointer w-full" onClick={() => setIsModalOpen(true)}>
-        <div 
-          style={{
-            maxWidth: 'min(162.75px, 11.3vw)',
-            aspectRatio: '162.75 / 324.86',
-            gap: 'min(12px, 0.83vw)',
-            opacity: 1,
-          }}
-          className="relative w-full mx-auto rounded-xl overflow-hidden bg-gray-50 border-2 border-dashed border-gray-300 transition-all duration-300 group-hover:border-gray-400 group-hover:bg-gray-100 flex items-center justify-center"
-        >
+      <div className="group cursor-pointer flex flex-col gap-3 w-full" onClick={() => setIsModalOpen(true)}>
+        {/* Dashed Picture Container */}
+        <div className="w-full aspect-[162.75/290.86] rounded-xl sm:rounded-2xl border border-dashed border-[#0A0A0A]/[0.12] bg-[#0A0A0A]/[0.04] transition-all duration-300 group-hover:bg-[#0A0A0A]/[0.06] flex items-center justify-center relative">
+          {/* Floating Action Button */}
           <img 
             src="/icons/Create an AI Avatar.svg" 
-            alt="Create Avatar" 
-            className="w-20 h-20 mt-8"
+            alt="" 
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[90px] lg:h-[90px] translate-y-1 sm:translate-y-2 transition-transform duration-300 group-hover:scale-105" 
           />
         </div>
         
-        {/* Text outside the container */}
-        <div className="mt-2">
-          <p className="text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors">
+        {/* Label Content - Frame 1707484110 */}
+        <div className="px-1.5 sm:px-2 md:px-2.5">
+          <p className="font-medium text-[11px] sm:text-xs md:text-[14px] leading-[16px] sm:leading-[18px] md:leading-[22px] tracking-[-0.007em] text-[#0A0A0A] group-hover:text-black transition-colors">
             Create an AI Avatar
           </p>
         </div>

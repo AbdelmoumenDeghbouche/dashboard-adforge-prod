@@ -7,48 +7,42 @@ interface TabSwitchProps {
   onTabChange: (tab: TabType) => void;
 }
 
-const tabs = [
-  { 
-    id: 'marketplace' as const, 
-    label: 'Marketplace',
-    icon: (
-      <img src="/icons/marketplace.svg" alt="Marketplace" className="w-4 h-4" />
-    )
-  },
-  { 
-    id: 'your-avatars' as const, 
-    label: 'Your avatars',
-    icon: (
-      <img src="/icons/your avatars.svg" alt="Your avatars" className="w-4 h-4" />
-    )
-  },
-];
-
 const TabSwitch: React.FC<TabSwitchProps> = ({ activeTab, onTabChange }) => {
   return (
-    <div
-      style={{
-        padding: '4px',
-        gap: '4px',
-        borderRadius: '14px',
-      }}
-      className="inline-flex bg-gray-100"
-    >
-      {tabs.map((tab) => (
-        <button
-          key={tab.id}
-          onClick={() => onTabChange(tab.id)}
-          className={cn(
-            'flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-[10px]',
-            activeTab === tab.id
-              ? 'bg-white text-text-primary shadow-sm'
-              : 'text-text-secondary hover:text-text-primary'
-          )}
-        >
-          {tab.icon}
-          {tab.label}
-        </button>
-      ))}
+    <div className="flex flex-row items-center p-1 gap-1 w-auto sm:w-[260px] h-[34px] sm:h-[38px] bg-[#0A0A0A]/[0.04] rounded-[14px]">
+      <button
+        onClick={() => onTabChange('marketplace')}
+        className={cn(
+          "flex flex-row items-center justify-center p-1 gap-1.5 sm:gap-2 w-auto sm:w-[124px] h-[26px] sm:h-[30px] rounded-[12px] transition-all duration-200",
+          activeTab === 'marketplace'
+            ? "bg-white shadow-[0px_24px_24px_-12px_rgba(6,86,134,0.02),0px_2px_4px_rgba(0,0,0,0.02),0px_1px_2px_rgba(0,0,0,0.04),0px_0px_0px_1px_rgba(6,86,134,0.04)] opacity-100"
+            : "opacity-50 hover:bg-white/40"
+        )}
+      >
+        <div className="w-4 h-4 flex items-center justify-center shrink-0">
+          <img src="/icons/marketplace.svg" alt="Marketplace" className="w-full h-full opacity-60" />
+        </div>
+        <span className="hidden sm:inline font-medium text-[14px] leading-[22px] tracking-[-0.012em] text-[#0A0A0A] whitespace-nowrap pr-1">
+          Marketplace
+        </span>
+      </button>
+
+      <button
+        onClick={() => onTabChange('your-avatars')}
+        className={cn(
+          "flex flex-row items-center justify-center p-1 gap-1.5 sm:gap-2 w-auto sm:w-[124px] h-[26px] sm:h-[30px] rounded-[12px] transition-all duration-200",
+          activeTab === 'your-avatars'
+            ? "bg-white shadow-[0px_24px_24px_-12px_rgba(6,86,134,0.02),0px_2px_4px_rgba(0,0,0,0.02),0px_1px_2px_rgba(0,0,0,0.04),0px_0px_0px_1px_rgba(6,86,134,0.04)] opacity-100"
+            : "opacity-50 hover:bg-white/40"
+        )}
+      >
+        <div className="w-4 h-4 flex items-center justify-center shrink-0">
+          <img src="/icons/your avatars.svg" alt="Your Avatars" className="w-full h-full opacity-60" />
+        </div>
+        <span className="hidden sm:inline font-medium text-[14px] leading-[22px] tracking-[-0.012em] text-[#0A0A0A] whitespace-nowrap pr-1">
+          Your avatars
+        </span>
+      </button>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface CreateAvatarModalProps {
   isOpen: boolean;
@@ -40,27 +41,26 @@ const CreateAvatarModal: React.FC<CreateAvatarModalProps> = ({ isOpen, onClose }
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <>
       {/* Backdrop with Strong Blur */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg z-40 transition-opacity"
+        className="fixed inset-0 bg-[#0A0A0A]/40 backdrop-blur-lg z-[200] transition-opacity"
         onClick={onClose}
       />
 
-      {/* Modal - Centered */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      {/* Modal Container - Perfectly Centered */}
+      <div className="fixed inset-0 z-[201] flex items-center justify-center p-4 min-h-screen pointer-events-none">
         <div 
-          className="bg-white shadow-2xl relative flex flex-col max-w-full"
+          className="bg-white shadow-2xl relative flex flex-col max-w-full animate-in fade-in zoom-in duration-300 pointer-events-auto"
           style={{
             width: 'min(794px, 55vw)',
             maxWidth: '90vw',
-            minHeight: 'min(500px, 48vh)',
+            minHeight: '400px',
             maxHeight: '90vh',
             borderRadius: 'min(40px, 2.78vw)',
             padding: 'min(36px, 2.5vw)',
             gap: 'min(20px, 1.39vw)',
-            opacity: 1,
           }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -185,7 +185,8 @@ const CreateAvatarModal: React.FC<CreateAvatarModalProps> = ({ isOpen, onClose }
           </div>
         </div>
       </div>
-    </>
+    </>,
+    document.body
   );
 };
 

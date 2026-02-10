@@ -26,11 +26,11 @@ export const FILTER_OPTIONS = {
   situation: ['Header', 'Navigation', 'Content', 'Pricing', 'CTA', 'Team'],
   accessories: ['Header', 'Navigation', 'Content', 'Pricing', 'CTA', 'Team'],
   skinTones: [
-    '#F5E6D3',
+    '#F5E6D3', // Lightest
     '#E8B896',
     '#D49A6A',
     '#B87043',
     '#8B5A3C',
-    '#4A312C',
+    '#4A312C', // Darkest
   ],
 };

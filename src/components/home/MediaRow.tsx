@@ -6,12 +6,18 @@ import type { MediaType } from '@/types';
 const MediaRow: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [selectedMedia, setSelectedMedia] = useState<MediaType>('video');
+  const [isProductOpen, setIsProductOpen] = useState(false);
 
   return (
     <div className="flex items-center gap-2 sm:gap-3 bg-white border border-border-light rounded-lg p-3 flex-wrap sm:flex-nowrap">
       {/* Product Selector */}
       <div className="w-full sm:w-auto">
-        <ProductSelector selected={selectedProduct} onSelect={setSelectedProduct} />
+        <ProductSelector 
+          selected={selectedProduct} 
+          onSelect={setSelectedProduct}
+          isOpen={isProductOpen}
+          onToggle={() => setIsProductOpen(!isProductOpen)}
+        />
       </div>
 
       {/* Media Toggles */}

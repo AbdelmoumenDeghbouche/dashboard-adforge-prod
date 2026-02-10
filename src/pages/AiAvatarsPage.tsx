@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Breadcrumb from '@/components/folders/Breadcrumb';
 import FilterPanel from '@/components/avatars/FilterPanel';
 import AvatarsGrid from '@/components/avatars/AvatarsGrid';
 import { AvatarFilter } from '@/types/avatars';
@@ -48,18 +49,17 @@ const AiAvatarsPage: React.FC = () => {
   });
 
   return (
-    <div 
-      style={{
-        maxWidth: 'min(1152px, 80vw)',
-        borderRadius: 'min(16px, 1.11vw)',
-        borderWidth: '1px',
-        opacity: 1,
-        height: 'min(964px, 94vh)',
-      }}
-      className="flex flex-col md:flex-row w-full bg-bg-primary border border-border-light overflow-hidden mx-auto"
-    >
-      <FilterPanel filters={filters} onFilterChange={setFilters} />
-      <AvatarsGrid avatars={filteredAvatars} />
+    <div className="flex flex-col gap-4 h-full bg-bg-sidebar pt-4 pr-1 sm:pr-2 pb-2 pl-0 overflow-hidden">
+      {/* Breadcrumb - Frame 1707484073 */}
+      <div className="px-[10px]">
+        <Breadcrumb paths={['Pulsor Inc.', 'AI Avatars']} />
+      </div>
+
+      {/* Main Content Wrapper - Frame 1707484068 */}
+      <div className="flex-1 bg-white border border-[#0A0A0A]/[0.06] rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+        <FilterPanel filters={filters} onFilterChange={setFilters} />
+        <AvatarsGrid avatars={filteredAvatars} />
+      </div>
     </div>
   );
 };
