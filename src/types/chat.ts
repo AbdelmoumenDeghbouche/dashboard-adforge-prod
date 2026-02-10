@@ -59,9 +59,12 @@ export interface MarketingAngle {
   description: string;
   score: string;
   metrics: {
-    emotion: string;
-    proof: string;
-    differentiation: string;
+    emotion?: string;
+    proof?: string;
+    differentiation?: string;
+    engagement?: string;
+    conversion?: string;
+    retention?: string;
   };
   reason: string;
   tags?: string[];
@@ -74,6 +77,9 @@ export interface PsychologyConcept {
   score: string;
   description: string;
   hook: string;
+  badge?: string;
+  scriptPreview?: string;
+  explanation?: string;
   metrics: {
     hook: string;
     mechanism: string;
