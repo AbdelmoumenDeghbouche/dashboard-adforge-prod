@@ -26,7 +26,7 @@ interface BrandProviderProps {
 }
 
 export const BrandProvider: React.FC<BrandProviderProps> = ({ children }) => {
-  const [brands, setBrands] = useState<Brand[]>(brandsData);
+  const [brands] = useState<Brand[]>(brandsData);
   const [currentBrandId, setCurrentBrandId] = useState<string>(brandsData[0].id);
   const [selectedChatId, setSelectedChatId] = useState<string | null>(null);
 
