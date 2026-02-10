@@ -8,13 +8,16 @@ export type ChatMessageType =
   | 'psychology_selection'
   | 'video_result'
   | 'selection_summary'
-  | 'static_ad_result';
+  | 'static_ad_result'
+  | 'user_selection'
+  | 'user'
+  | 'ai';
 
 export interface ChatMessage {
   id: string;
   type: ChatMessageType;
   sender: 'ai' | 'user';
-  timestamp: Date;
+  timestamp: Date | string;
   content?: string;
   data?: {
     audiences?: Audience[];
